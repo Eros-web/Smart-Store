@@ -32,10 +32,10 @@
               <div class="brand-logo">
                 {{-- <img src="template/images/logo.svg" alt="logo"> --}}
                 <h3>
-                    GSI110A Login
+                    Smart Store Login
                 </h3> 
               </div>
-              <h4>Hello! let's get started</h4>
+              <h4>Selamat Datang di Smart Store</h4>
               <h6 class="fw-light">Sign in to continue.</h6>
               <form class="pt-3" method="POST">
                 @csrf

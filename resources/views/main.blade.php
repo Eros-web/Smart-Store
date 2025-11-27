@@ -82,7 +82,7 @@
             <div class="container mt-3" style="padding-right: 50px">
                 <a class="head navbar-brand mt-3" href="#">
                     <img src="{{ url('/assets/images/laravel.png') }}" height="60">
-                    GSI110A
+                    Smart Store
                 </a>
                 <h3 class="head m-3"></h3>
             </div>
@@ -145,7 +145,7 @@
         </div> 
 
         <footer class="text-center p-3">
-            &copy; 2024 GSI110A - Apps Stok Barang All rights reserved.
+            &copy; 2024 Smart Store - Apps Stok Barang All rights reserved.
         </footer>
     </div>
 </div>

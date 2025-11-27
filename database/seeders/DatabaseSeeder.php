@@ -14,13 +14,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // public function run(): void
+{
+    // admin
+    \App\Models\User::factory()->create([
+        'name' => 'admin',
+        'email' => 'admin@gmail.com',
+        'password' => Hash::make('123123'),
+        'level' => 'superadmin'
+    ]);
 
-        User::factory()->create([
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('123123'),
-            'level' => 'superadmin'
-        ]);
+    // data dummy toko
+    $this->call([
+        SuplierSeeder::class,
+        PelangganSeeder::class,
+        StokSeeder::class,
+        BarangMasukSeeder::class,
+        BarangKeluarSeeder::class,
+    ]);
+}
+
     }
 }
