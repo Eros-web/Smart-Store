@@ -72,7 +72,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($data as $item)
+                                @foreach ($data as $item)
                                     <tr>
                                         <td></td>
                                         <td>
@@ -94,10 +94,10 @@
                                              
                                         </td>
                                     </tr>   
-                                @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
-                        {{-- {{ $data->links() }} --}}
+                        {{ $data->links() }}
 
                     </div>
                 </div>
@@ -107,4 +107,4 @@
 
 @endsection
 
-//testing github
+

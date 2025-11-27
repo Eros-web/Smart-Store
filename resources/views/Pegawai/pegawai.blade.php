@@ -70,7 +70,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($data as $item)
+                                @foreach ($data as $item)
                                     <tr>
                                         <td></td>
                                         <td>
@@ -80,17 +80,21 @@
                                         <td>{{ $item->email }} </td>
                                         <td class="text-center">{{ $item->level }} </td>
                                         <td class="text-center">
-                                            <a href="{{ url('/pegawai/edit') }}/{{ $item->id }}" class="btn btn-warning btn-sm">
-                                                <i class="bi bi-pencil"></i> Edit
-                                            </a>
-                                            
-                                            <a href="{{ url('/pegawai/delete', ['id' => $item->id]) }}" class="btn btn-danger btn-sm" 
-                                               onclick="return confirm('Hapus Data ???');">
-                                                <i class="bi bi-trash"></i> Delete
-                                            </a>
+                                            @if ($item->level == 'admin')
+                                                <a href="{{ url('/pegawai/edit') }}/{{ $item->id }}" class="btn btn-warning btn-sm">
+                                                    <i class="bi bi-pencil"></i> Edit
+                                                </a>
+                                                
+                                                <a href="{{ url('/pegawai/delete', ['id' => $item->id]) }}" class="btn btn-danger btn-sm" 
+                                                onclick="return confirm('Hapus Data ???');">
+                                                    <i class="bi bi-trash"></i> Delete
+                                                </a>
+                                            @else
+                                                <a class="btn btn-danger">Cannot Acction Added</a>
+                                            @endif
                                         </td>
                                     </tr>   
-                                @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
                         {{ $data->links() }}
@@ -109,7 +113,7 @@
                     <h1 class="modal-title fs-5" id="addPegawai">Data Pegawai Baru</h1>
                     <a href="{{ url('/pegawai') }}" type="button" class="btn-close"></a>
                 </div>
-                <form action="" method="post">
+                <form action="{{ route('add-pegawai') }}" method="post">
                     @csrf
                     <div class="modal-body">
                         <div class="row">

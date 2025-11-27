@@ -27,7 +27,7 @@
                                             <input hidden type="text" id="pegawai-id" name="id">
 
                                             <label class="form-label" for="name">Nama Lengkap</label>
-                                            <input type="text" value="{{ old('name') }}" name="name" id="pegawai-name" class="form-control @error('name') is-invalid @enderror" placeholder="Nama Lengkap..."/>
+                                            <input type="text" value="{{ old('name', $data->name) }}" name="name" id="pegawai-name" class="form-control @error('name') is-invalid @enderror" placeholder="Nama Lengkap..."/>
                                             @error('name')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -38,7 +38,7 @@
                                     <div class="col-12">
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="email">Email</label>
-                                            <input type="email" value="{{ old('email') }}" name="email" id="pegawai-email" class="form-control @error('email') is-invalid @enderror" placeholder="Email Anda"/>
+                                            <input type="email" value="{{ old('email', $data->email) }}" name="email" id="pegawai-email" class="form-control @error('email') is-invalid @enderror" placeholder="Email Anda"/>
                                             @error('email')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}

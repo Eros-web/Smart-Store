@@ -72,10 +72,33 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- Isi Disini --}}
+                                @foreach ($pelanggan as $item)
+                                    <tr>
+                                        <td class="text-center">
+                                            {{ (($pelanggan->currentPage() -1) * $pelanggan->perPage()) + $loop->iteration }}
+                                        </td>
+                                        <td>{{ $item->nama_pelanggan }}</td>
+                                        <td class="text-center">{{ $item->telp }}</td>
+                                        <td class="text-center">{{ $item->jenis_kelamin }}</td>
+                                        <td>{{ Str::limit($item->alamat, 20, '...') }}</td>
+                                        <td class="text-center">{{ $item->kota }}</td>
+                                        <td class="text-center">{{ $item->provinsi }}</td>
+                                        <td class="text-center">
+                                            <a href="{{ url('/pelanggan/edit') }}/{{ $item->id }}" class="btn btn-warning btn-sm" title="Edit">
+                                                <i class="bi bi-pencil"></i> 
+                                            </a>
+
+                                            <a href="{{ url('/pelanggan') }}/{{ $item->id }}" class="btn btn-danger btn-sm" title="Hapus" 
+                                                onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini?')">
+                                                <i class="bi bi-trash"></i> 
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
-                        {{-- {{ $getData->links() }} --}}
+                        
+                        {{ $pelanggan->links() }}
 
                     </div>
                 </div>
