@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Auth\LogoutController; // <- tambah ini
 use App\Http\Controllers\Barang\barangKeluarController;
 use App\Http\Controllers\Barang\barangMasukController;
 use App\Http\Controllers\DashboardController;
@@ -16,6 +17,10 @@ Route::controller(AuthController::class)->group(function(){
     Route::get('/', 'login')->name('login');
     Route::post('/', 'login_proses');
 
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::post('/logout', [LogoutController::class, '__invoke'])->name('logout');
 });
 
 Route::middleware(['auth', 'cekLevel:superadmin'])->group(function(){
