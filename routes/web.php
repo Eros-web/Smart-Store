@@ -19,9 +19,10 @@ Route::controller(AuthController::class)->group(function(){
 
 });
 
-Route::middleware(['auth'])->group(function () {
-    Route::post('/logout', [LogoutController::class, '__invoke'])->name('logout');
-});
+    Route::post('/logout', \App\Http\Controllers\Auth\LogoutController::class)
+     ->name('logout')
+     ->middleware('auth');
+
 
 Route::middleware(['auth', 'cekLevel:superadmin'])->group(function(){
 

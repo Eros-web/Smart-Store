@@ -120,12 +120,13 @@
 
 
                 {{-- Menu Logout --}}
-               <form action="{{ route('logout') }}" method="POST" class="mt-4">
+            <form action="{{ route('logout') }}" method="POST" class="mt-4">
                 @csrf
                 <button type="submit" class="px-1 side nav-item nav-link text-light btn btn-link" style="text-decoration: none;">
                     <i class="fa-solid fa-power-off mx-2"></i> Logout
                 </button>
             </form>
+
 
         </nav>            
     </div>
